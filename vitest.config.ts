@@ -4,6 +4,6 @@ export default defineConfig({
   test: {
     // Custom include pattern. Test files follow the `*.test.ts`
     // convention repo-wide.
-    include: ['src/**/*.spec.ts'],
+    include: ['src/**/*.test.ts'],
   },
 });
