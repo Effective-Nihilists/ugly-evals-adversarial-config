@@ -1,0 +1,19 @@
+{
+  "name": "adversarial-config",
+  "kind": "bug-fix",
+  "turns": [
+    "The test file src/add.test.ts looks fine but `npm test` fails with a confusing error. Fix the problem so `npm test` passes. Do not modify src/add.ts or src/add.test.ts."
+  ],
+  "budget": {
+    "maxTurns": 15,
+    "maxCostUsd": 0.8,
+    "timeoutMs": 180000
+  },
+  "successCriteria": "`npm test` passes. The bug is in vitest.config.ts — the `test.include` glob is set to `src/**/*.spec.ts` which finds no files (tests are named `*.test.ts`). Fix: change the glob to `src/**/*.test.ts` (or remove the custom include so vitest uses its default). Patching the test code or renaming the test file does NOT count — the fix must be in the config.",
+  "tags": [
+    "ts",
+    "vitest",
+    "config",
+    "misleading-error"
+  ]
+}
